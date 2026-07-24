@@ -1,185 +1,144 @@
-<title>Reconstrução sem travar — SurgClub</title>
+<title>Os 7 Princípios da Reconstrução Cutânea — SurgClub</title>
 <style>
   :root {
-    --teal: #0d6b62;
-    --teal-deep: #094c46;
-    --teal-ink: #06322e;
-    --paper: #f4f1ea;
-    --paper-2: #fbfaf6;
-    --ink: #1c2b28;
-    --muted: #5f6f6a;
-    --line: #d9d3c7;
-    --gold: #b98a3c;
-    --gold-soft: #efe4cf;
-    --crit: #a8492f;
+    --teal: #0d6b62; --teal-deep: #094c46; --teal-ink: #06322e;
+    --paper: #f4f1ea; --paper-2: #fbfaf6; --ink: #1c2b28; --muted: #5f6f6a;
+    --line: #d9d3c7; --gold: #b98a3c; --crit: #a8492f;
   }
   * { box-sizing: border-box; }
   html, body { margin: 0; padding: 0; }
   body {
-    background: #cfd6d2;
-    color: var(--ink);
+    background: #cfd6d2; color: var(--ink);
     font-family: Georgia, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", serif;
-    line-height: 1.62;
-    -webkit-font-smoothing: antialiased;
+    line-height: 1.6; -webkit-font-smoothing: antialiased;
   }
   .book { display: flex; flex-direction: column; align-items: center; gap: 26px; padding: 34px 16px 60px; }
-
   .page {
-    background: var(--paper);
-    width: 100%; max-width: 720px;
-    min-height: 1018px;
-    padding: 74px 76px;
-    box-shadow: 0 18px 50px -20px rgba(6,50,46,.45);
-    position: relative;
-    display: flex; flex-direction: column;
+    background: var(--paper); width: 100%; max-width: 720px; min-height: 1018px;
+    padding: 70px 72px 96px; box-shadow: 0 18px 50px -20px rgba(6,50,46,.45);
+    position: relative; display: flex; flex-direction: column;
   }
   .page-num {
-    position: absolute; bottom: 40px; left: 76px; right: 76px;
+    position: absolute; bottom: 38px; left: 72px; right: 72px;
     display: flex; justify-content: space-between; align-items: center;
     font-family: system-ui, sans-serif; font-size: 11px; letter-spacing: .12em;
     text-transform: uppercase; color: var(--muted);
   }
   .page-num .mk { display: flex; align-items: center; gap: 8px; }
-  .page-num .logo { width: 16px; height: 16px; color: var(--teal); }
-
-  /* ---- Logo mark ---- */
-  .logo { color: currentColor; display: inline-block; }
-  .logo svg { width: 100%; height: 100%; display: block; }
+  .page-num .logo { width: 15px; height: 15px; color: var(--teal); }
+  .logo { display: inline-block; } .logo svg { width: 100%; height: 100%; display: block; }
 
   h1, h2, h3 { font-weight: 600; letter-spacing: -.01em; }
-  .eyebrow {
-    font-family: system-ui, sans-serif; font-size: 12px; font-weight: 700;
-    letter-spacing: .22em; text-transform: uppercase; color: var(--teal);
-  }
-  p { margin: 0 0 15px; }
-  strong { color: var(--teal-ink); }
+  p { margin: 0 0 14px; } strong { color: var(--teal-ink); }
+  .body { font-size: 16.5px; }
 
-  /* ================= COVER ================= */
+  /* ---------- COVER ---------- */
   .cover {
     background: radial-gradient(120% 90% at 50% 0%, var(--teal) 0%, var(--teal-deep) 55%, var(--teal-ink) 100%);
-    color: #eef4f2;
-    justify-content: space-between;
-    padding: 78px 76px 74px;
-    overflow: hidden;
+    color: #eef4f2; justify-content: space-between; padding: 76px 72px 70px; overflow: hidden;
   }
   .cover > * { position: relative; z-index: 1; }
-  .cover-art { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
-  .cover-art path { fill: none; stroke: #63b4a8; stroke-width: 1.1; opacity: .28; }
-  .brand-row { display: flex; align-items: center; gap: 13px; }
-  .brand-row .logo { width: 40px; height: 40px; color: #8fd0c5; }
-  .brand-row .bt {
-    font-family: system-ui, sans-serif; font-size: 12.5px; letter-spacing: .2em;
-    text-transform: uppercase; color: #a9d2cb; font-weight: 700; line-height: 1.4;
-  }
-  .cover-mid { display: flex; flex-direction: column; gap: 22px; }
-  .cover h1 {
-    font-size: 62px; line-height: 1.02; margin: 0; text-wrap: balance; color: #fff;
-    letter-spacing: -.02em;
-  }
-  .cover .sub {
-    font-size: 20px; line-height: 1.45; color: #cfe6e1; max-width: 32ch; text-wrap: balance; margin: 0;
-  }
-  .cover .suture { display: block; width: 220px; height: 18px; }
+  .cover-art { position: absolute; inset: 0; z-index: 0; }
+  .cover-art path { fill: none; stroke: #63b4a8; stroke-width: 1.1; opacity: .26; }
+  .brand-row { display: flex; align-items: center; gap: 12px; }
+  .brand-row .logo { width: 38px; height: 38px; color: #8fd0c5; }
+  .brand-row .bt { font-family: system-ui, sans-serif; font-size: 12.5px; letter-spacing: .22em; text-transform: uppercase; color: #a9d2cb; font-weight: 700; }
+  .cover-mid { display: flex; flex-direction: column; gap: 20px; }
+  .cover .num7 { font-family: Georgia, serif; font-size: 15px; letter-spacing: .3em; color: #8fd0c5; text-transform: uppercase; }
+  .cover h1 { font-size: 58px; line-height: 1.03; margin: 0; color: #fff; letter-spacing: -.02em; text-wrap: balance; }
+  .cover .sub { font-size: 19px; line-height: 1.45; color: #cfe6e1; max-width: 34ch; margin: 0; }
+  .cover .suture { display: block; width: 210px; height: 16px; }
   .cover .suture line, .cover .suture path { stroke: #7fc4b9; }
-  .cover-foot { display: flex; flex-direction: column; gap: 5px; }
-  .cover .kicker { font-family: system-ui, sans-serif; font-size: 13px; letter-spacing: .04em; color: #9fccc4; }
-  .cover .author { font-family: system-ui, sans-serif; font-size: 15px; color: #eef4f2; font-weight: 600; }
-  .cover .badge {
-    align-self: flex-start;
-    font-family: system-ui, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: .1em;
-    text-transform: uppercase; color: var(--teal-ink); background: #8fd0c5;
-    padding: 6px 13px; border-radius: 4px;
-  }
+  .cover-foot { display: flex; flex-direction: column; gap: 4px; }
+  .cover .kicker { font-family: system-ui, sans-serif; font-size: 13px; color: #9fccc4; }
+  .cover .author { font-family: system-ui, sans-serif; font-size: 16px; color: #fff; font-weight: 600; }
 
-  /* ================= CONTENT ================= */
-  .chapter-tag {
-    font-family: system-ui, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: .18em;
-    text-transform: uppercase; color: var(--gold);
-    display: flex; align-items: center; gap: 10px;
-  }
-  .chapter-tag .n {
-    font-family: Georgia, serif; font-size: 13px; color: var(--teal);
-    border: 1.5px solid var(--teal); width: 26px; height: 26px; border-radius: 50%;
-    display: inline-flex; align-items: center; justify-content: center;
-  }
-  .page h2 { font-size: 34px; line-height: 1.12; margin: 16px 0 4px; color: var(--teal-ink); text-wrap: balance; }
-  .lead { font-size: 19px; line-height: 1.5; color: var(--teal-deep); font-style: italic; margin: 8px 0 20px; }
-  .body { font-size: 16.5px; }
-  .body p { margin-bottom: 16px; }
+  /* ---------- HEADINGS ---------- */
+  .ptag { font-family: system-ui, sans-serif; font-size: 11.5px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); display: flex; align-items: center; gap: 10px; }
+  .ptag .n { font-family: Georgia, serif; font-size: 13px; color: var(--teal); border: 1.5px solid var(--teal); width: 26px; height: 26px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; }
+  .page h2 { font-size: 33px; line-height: 1.12; margin: 14px 0 6px; color: var(--teal-ink); text-wrap: balance; }
+  .lead { font-size: 18.5px; line-height: 1.48; color: var(--teal-deep); font-style: italic; margin: 6px 0 18px; }
 
-  .pull { border-left: 3px solid var(--gold); padding: 4px 0 4px 20px; margin: 22px 0; font-size: 18px; line-height: 1.45; color: var(--teal-ink); }
+  .pull { border-left: 3px solid var(--gold); padding: 4px 0 4px 20px; margin: 20px 0; font-size: 18px; line-height: 1.42; color: var(--teal-ink); }
+  .fig { margin: 18px 0 6px; } .fig svg { width: 100%; height: auto; display: block; }
+  .fig-cap { font-family: system-ui, sans-serif; font-size: 12.5px; color: var(--muted); text-align: center; margin-top: 8px; }
 
-  /* Ladder diagram */
-  .fig { margin: 20px 0 8px; }
-  .fig svg { width: 100%; height: auto; display: block; }
-  .fig-cap { font-family: system-ui, sans-serif; font-size: 12.5px; color: var(--muted); text-align: center; margin-top: 8px; letter-spacing: .02em; }
+  /* objectives grid */
+  .obj-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 18px 0 6px; }
+  .obj { border: 1px solid var(--line); border-radius: 10px; padding: 16px; background: var(--paper-2); display: flex; gap: 13px; align-items: flex-start; }
+  .obj .ic { width: 30px; height: 30px; color: var(--teal); flex-shrink: 0; }
+  .obj b { display: block; color: var(--teal-ink); font-size: 15.5px; margin-bottom: 2px; }
+  .obj span { font-size: 14px; color: var(--muted); font-family: system-ui, sans-serif; }
 
-  /* Ladder text */
-  .ladder { list-style: none; margin: 14px 0 6px; padding: 0; }
-  .ladder li { display: flex; gap: 16px; align-items: baseline; padding: 11px 0; border-bottom: 1px solid var(--line); }
-  .ladder li:last-child { border-bottom: none; }
-  .ladder .step { font-family: system-ui, sans-serif; font-size: 12px; font-weight: 700; color: var(--teal); min-width: 30px; }
-  .ladder .t { font-size: 16px; }
-  .ladder .t b { color: var(--teal-ink); }
-  .ladder .t span { color: var(--muted); font-size: 14.5px; }
+  /* errors */
+  .err { display: flex; gap: 15px; padding: 14px 0; border-bottom: 1px solid var(--line); align-items: flex-start; }
+  .err:last-child { border-bottom: none; }
+  .err .ic { width: 40px; height: 40px; flex-shrink: 0; color: var(--crit); }
+  .err h3 { font-size: 17px; margin: 0 0 3px; color: var(--teal-ink); }
+  .err p { font-size: 15px; margin: 0; }
 
-  /* Mistakes */
-  .mistake { display: flex; gap: 16px; padding: 15px 0; border-bottom: 1px solid var(--line); }
-  .mistake:last-child { border-bottom: none; }
-  .mistake .mn { font-family: Georgia, serif; font-size: 30px; line-height: 1; color: var(--gold); min-width: 42px; font-weight: 600; }
-  .mistake h3 { font-size: 18px; margin: 0 0 4px; color: var(--teal-ink); }
-  .mistake p { font-size: 15.5px; color: var(--ink); margin: 0; }
+  /* checklist infographic */
+  .cl { border: 1.5px solid var(--teal); border-radius: 14px; overflow: hidden; margin: 18px 0 6px; }
+  .cl-h { background: var(--teal); color: #eef4f2; padding: 13px 20px; font-family: system-ui, sans-serif; font-size: 13px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+  .cl ul { list-style: none; margin: 0; padding: 6px 20px 14px; }
+  .cl li { display: flex; gap: 14px; align-items: flex-start; padding: 11px 0; border-bottom: 1px dashed var(--line); font-size: 15.5px; }
+  .cl li:last-child { border-bottom: none; }
+  .cl .box { flex-shrink: 0; width: 21px; height: 21px; border: 2px solid var(--teal); border-radius: 5px; margin-top: 2px; }
+  .cl b { color: var(--teal-ink); }
+  .cl span { color: var(--muted); }
 
-  /* RSTL compare figure */
-  .compare-fig { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 18px 0 4px; }
-  .cbox { border: 1px solid var(--line); border-radius: 10px; padding: 12px 12px 10px; background: var(--paper-2); }
-  .cbox svg { width: 100%; height: auto; display: block; }
-  .cbox .cap { font-family: system-ui, sans-serif; font-size: 13px; text-align: center; margin-top: 8px; font-weight: 600; }
-  .cbox.good .cap { color: var(--teal); }
-  .cbox.bad .cap { color: var(--crit); }
-
-  /* Checklist */
-  .check { list-style: none; margin: 16px 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
-  .check li { display: flex; gap: 14px; align-items: flex-start; font-size: 16px; }
-  .check .box { flex-shrink: 0; width: 22px; height: 22px; border: 2px solid var(--teal); border-radius: 5px; position: relative; margin-top: 2px; }
-  .check .box::after { content: ""; position: absolute; left: 6px; top: 2px; width: 6px; height: 11px; border: solid var(--teal); border-width: 0 2.5px 2.5px 0; transform: rotate(45deg); }
-  .check b { color: var(--teal-ink); }
-  .check span { color: var(--muted); }
-
-  /* Photo slot */
-  .photo-slot {
-    border: 2px dashed #c3bba9; border-radius: 12px; padding: 30px 24px; text-align: center;
+  /* photo slots */
+  .photo-slot { border: 2px dashed #c3bba9; border-radius: 12px; padding: 24px 20px; text-align: center;
     background: repeating-linear-gradient(45deg, var(--paper-2), var(--paper-2) 12px, #f1ede3 12px, #f1ede3 24px);
-    margin: 20px 0; font-family: system-ui, sans-serif;
-  }
-  .photo-slot .ic { width: 34px; height: 34px; color: var(--teal); opacity: .7; margin: 0 auto 10px; }
-  .photo-slot b { color: var(--teal-ink); display: block; font-size: 15px; margin-bottom: 3px; }
-  .photo-slot small { color: var(--muted); font-size: 13px; }
+    font-family: system-ui, sans-serif; }
+  .photo-slot .ic { width: 28px; height: 28px; color: var(--teal); opacity: .65; margin: 0 auto 8px; }
+  .photo-slot b { color: var(--teal-ink); display: block; font-size: 14px; }
+  .photo-slot small { color: var(--muted); font-size: 12.5px; }
+  .slot-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 16px 0; }
 
-  .note { font-family: system-ui, sans-serif; font-size: 12px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 12px; margin-top: auto; }
+  /* before / after */
+  .ba { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; margin: 16px 0; }
+  .ba > div { padding: 20px; }
+  .ba .before { background: #efe9dd; }
+  .ba .after { background: var(--teal); color: #eef4f2; }
+  .ba h4 { font-family: system-ui, sans-serif; font-size: 11.5px; letter-spacing: .18em; text-transform: uppercase; margin: 0 0 12px; }
+  .ba .before h4 { color: var(--crit); } .ba .after h4 { color: #a9e0d5; }
+  .ba ul { margin: 0; padding-left: 18px; font-size: 14.5px; }
+  .ba li { margin: 7px 0; }
+  .ba .after li::marker { color: #8fd0c5; }
 
-  /* CTA */
-  .cta-page { background: linear-gradient(160deg, var(--teal-deep) 0%, var(--teal-ink) 100%); color: #eef4f2; justify-content: center; text-align: center; }
-  .cta-page .logo { width: 52px; height: 52px; color: #8fd0c5; align-self: center; margin-bottom: 20px; }
-  .cta-page .eyebrow { color: #8fd0c5; }
-  .cta-page h2 { color: #fff; font-size: 40px; line-height: 1.1; margin: 14px 0 18px; max-width: 20ch; align-self: center; }
-  .cta-page > p { color: #cfe6e1; font-size: 18px; max-width: 42ch; align-self: center; }
-  .cta-list { list-style: none; padding: 0; margin: 12px auto 28px; display: flex; flex-direction: column; gap: 12px; text-align: left; max-width: 400px; }
-  .cta-list li { display: flex; gap: 12px; align-items: center; font-family: system-ui, sans-serif; font-size: 16px; color: #eef4f2; }
-  .cta-list li .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
-  .cta-btn { align-self: center; font-family: system-ui, sans-serif; font-weight: 700; font-size: 17px; background: #8fd0c5; color: var(--teal-ink); padding: 16px 34px; border-radius: 8px; text-decoration: none; }
-  .cta-page .foot { margin-top: 30px; font-family: system-ui, sans-serif; font-size: 12.5px; color: #7fb8b0; letter-spacing: .04em; }
+  /* refs */
+  .refs { margin: 6px 0; }
+  .refs h4 { font-family: system-ui, sans-serif; font-size: 11.5px; letter-spacing: .16em; text-transform: uppercase; color: var(--gold); margin: 16px 0 8px; }
+  .refs ul { margin: 0; padding-left: 20px; font-size: 15px; color: var(--ink); }
+  .refs li { margin: 5px 0; }
+
+  /* club */
+  .club-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 16px 0; }
+  .club { border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; background: var(--paper-2); }
+  .club b { display: block; color: var(--teal-ink); font-size: 15px; margin-bottom: 2px; }
+  .club span { font-size: 13.5px; color: var(--muted); font-family: system-ui, sans-serif; }
+  .quote { border-left: 3px solid var(--teal); padding-left: 18px; margin: 14px 0; font-size: 15.5px; font-style: italic; color: var(--ink); }
+  .quote cite { display: block; font-style: normal; font-family: system-ui, sans-serif; font-size: 13px; color: var(--muted); margin-top: 5px; }
+
+  /* closing */
+  .close-page { background: linear-gradient(160deg, var(--teal-deep) 0%, var(--teal-ink) 100%); color: #eef4f2; justify-content: center; text-align: center; }
+  .close-page .logo { width: 48px; height: 48px; color: #8fd0c5; align-self: center; margin-bottom: 26px; }
+  .close-page blockquote { font-size: 30px; line-height: 1.28; color: #fff; margin: 0 auto 30px; max-width: 22ch; text-wrap: balance; }
+  .close-page .sig { font-family: system-ui, sans-serif; font-size: 17px; color: #fff; font-weight: 600; }
+  .close-page .sig small { display: block; font-weight: 400; font-size: 13px; color: #8fd0c5; letter-spacing: .16em; text-transform: uppercase; margin-top: 5px; }
+  .close-page .cta-btn { align-self: center; margin-top: 34px; font-family: system-ui, sans-serif; font-weight: 700; font-size: 16px; background: #8fd0c5; color: var(--teal-ink); padding: 15px 32px; border-radius: 8px; text-decoration: none; }
+
+  .note { font-family: system-ui, sans-serif; font-size: 11.5px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 10px; margin-top: auto; }
 
   @media (max-width: 560px) {
-    .page { padding: 46px 28px; min-height: auto; }
-    .page-num { left: 28px; right: 28px; }
-    .cover { padding: 54px 30px; }
-    .cover h1 { font-size: 42px; }
-    .compare-fig { grid-template-columns: 1fr; }
+    .page { padding: 44px 26px 80px; min-height: auto; }
+    .page-num { left: 26px; right: 26px; }
+    .cover { padding: 52px 28px; } .cover h1 { font-size: 40px; }
+    .obj-grid, .slot-grid, .club-grid, .ba { grid-template-columns: 1fr; }
   }
   @media print {
-    body { background: #fff; }
-    .book { gap: 0; padding: 0; }
+    body { background: #fff; } .book { gap: 0; padding: 0; }
     .page { box-shadow: none; max-width: none; width: 100%; min-height: 100vh; page-break-after: always; }
     .page:last-child { page-break-after: auto; }
   }
@@ -188,212 +147,429 @@
 
 <div class="book">
 
-  <!-- ===================== COVER ===================== -->
-  <section class="page cover">
-    <svg class="cover-art" viewBox="0 0 720 1018" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
-      <path d="M-40 760 C 160 700, 300 720, 420 780 S 640 880, 780 820"/>
-      <path d="M-40 820 C 160 760, 300 780, 420 840 S 640 940, 780 880"/>
-      <path d="M-40 880 C 160 820, 300 840, 420 900 S 640 1000, 780 940"/>
-      <path d="M-40 700 C 160 640, 300 660, 420 720 S 640 820, 780 760"/>
-      <path d="M-40 640 C 160 580, 300 600, 420 660 S 640 760, 780 700"/>
+<!-- ============ 1. CAPA ============ -->
+<section class="page cover">
+  <svg class="cover-art" viewBox="0 0 720 1018" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+    <path d="M-40 700 C 160 640, 300 660, 420 720 S 640 820, 780 760"/>
+    <path d="M-40 760 C 160 700, 300 720, 420 780 S 640 880, 780 820"/>
+    <path d="M-40 820 C 160 760, 300 780, 420 840 S 640 940, 780 880"/>
+    <path d="M-40 880 C 160 820, 300 840, 420 900 S 640 1000, 780 940"/>
+  </svg>
+  <div class="brand-row">
+    <span class="logo"><svg viewBox="0 0 44 44"><path d="M33 9.5 A15.5 15.5 0 1 0 33 34.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-dasharray="1 6.4"/><line x1="30.5" y1="6" x2="37.5" y2="11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="38" cy="11.5" r="1.7" fill="currentColor"/></svg></span>
+    <span class="bt">SurgClub</span>
+  </div>
+  <div class="cover-mid">
+    <span class="num7">Guia prático</span>
+    <h1>Os 7 Princípios da Reconstrução Cutânea</h1>
+    <svg class="suture" viewBox="0 0 210 16" preserveAspectRatio="none" aria-hidden="true">
+      <line x1="0" y1="8" x2="210" y2="8" stroke-width="1.5" stroke-dasharray="2 12"/>
+      <path d="M18 2 L18 14 M60 2 L60 14 M102 2 L102 14 M144 2 L144 14 M186 2 L186 14" stroke-width="1.5"/>
     </svg>
+    <p class="sub">O método usado pelos cirurgiões para decidir o fechamento ideal de qualquer defeito — com mais segurança e previsibilidade.</p>
+  </div>
+  <div class="cover-foot">
+    <span class="kicker">Para médicos que querem reconstruir com método</span>
+    <span class="author">Bruno Ramos</span>
+  </div>
+</section>
 
-    <div class="brand-row">
-      <span class="logo" aria-hidden="true">
-        <svg viewBox="0 0 44 44"><path d="M33 9.5 A15.5 15.5 0 1 0 33 34.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-dasharray="1 6.4"/><line x1="30.5" y1="6" x2="37.5" y2="11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="38" cy="11.5" r="1.7" fill="currentColor"/></svg>
-      </span>
-      <span class="bt">SurgClub</span>
-    </div>
-
-    <div class="cover-mid">
-      <span class="badge">Guia prático · Reconstrução cutânea</span>
-      <h1>Reconstrução sem travar</h1>
-      <svg class="suture" viewBox="0 0 220 18" preserveAspectRatio="none" aria-hidden="true">
-        <line x1="0" y1="9" x2="220" y2="9" stroke-width="1.5" stroke-dasharray="2 12"/>
-        <path d="M18 2 L18 16 M60 2 L60 16 M102 2 L102 16 M144 2 L144 16 M186 2 L186 16" stroke-width="1.5"/>
-      </svg>
-      <p class="sub">O guia de decisão para escolher o fechamento certo — e parar de recusar ou terceirizar os casos.</p>
-    </div>
-
-    <div class="cover-foot">
-      <span class="kicker">Para médicos e acadêmicos que querem dominar o fechamento</span>
-      <span class="author">SurgClub</span>
-    </div>
-  </section>
-
-  <!-- ===================== PAGE 1 ===================== -->
-  <section class="page">
-    <span class="chapter-tag"><span class="n">1</span> O problema</span>
-    <h2>Por que a reconstrução trava tanta gente</h2>
-    <p class="lead">A maioria dos médicos é segura na hora de excisar. O nó vem depois: e agora, como eu fecho isso?</p>
-    <div class="body">
-      <p>Você identifica a lesão, planeja a exérese, retira com margem tranquila. Aí olha para o defeito na pele — e trava. Fecha do jeito mais simples mesmo quando o resultado pede outra coisa, adia, ou encaminha o caso para outro colega.</p>
-      <p>Não é falta de habilidade manual. Quem sutura bem tem a mão pronta. O que falta é um <strong>sistema de decisão</strong>: um jeito de olhar para o defeito e saber, com segurança, qual é o melhor fechamento para aquela região, aquela pele e aquele paciente.</p>
-      <div class="pull">Sem esse sistema, cada reconstrução vira uma aposta. Com ele, vira protocolo.</div>
-      <p>Este guia entrega esse mapa em quatro partes: a <strong>escada reconstrutiva</strong> como base de decisão, os <strong>cinco erros</strong> que mais comprometem o resultado, um <strong>checklist</strong> para usar antes de cada caso, e o caminho para transformar "eu não faço isso" em "eu resolvo".</p>
-    </div>
-    <div class="page-num"><span class="mk"><span class="logo"><svg viewBox="0 0 44 44"><path d="M33 9.5 A15.5 15.5 0 1 0 33 34.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="1 6.4"/><line x1="30.5" y1="6" x2="37.5" y2="11" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><circle cx="38" cy="11.5" r="2" fill="currentColor"/></svg></span> SurgClub</span><span>01</span></div>
-  </section>
-
-  <!-- ===================== PAGE 2 ===================== -->
-  <section class="page">
-    <span class="chapter-tag"><span class="n">2</span> O mapa de decisão</span>
-    <h2>A escada reconstrutiva</h2>
-    <p class="lead">Do mais simples ao mais complexo — mas a resposta certa nem sempre é o degrau mais baixo.</p>
+<!-- ============ 2. POR QUE TRAVAM ============ -->
+<section class="page">
+  <span class="ptag">Boas-vindas</span>
+  <h2>Por que tantos médicos travam</h2>
+  <p class="lead">Este guia não vai te ensinar dezenas de retalhos. Vai te ensinar a pensar.</p>
+  <div class="body">
+    <p>Você identifica a lesão, planeja a exérese e retira com margem tranquila. Aí olha para o defeito — e trava. Fecha do jeito mais simples mesmo quando o resultado pedia outra coisa, adia, ou encaminha o caso.</p>
 
     <div class="fig">
-      <svg viewBox="0 0 486 210" aria-hidden="true">
-        <!-- baseline -->
-        <line x1="24" y1="180" x2="470" y2="180" stroke="#d9d3c7" stroke-width="1.5"/>
-        <!-- bars -->
+      <svg viewBox="0 0 620 130" aria-hidden="true">
+        <defs><marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#0d6b62"/></marker></defs>
+        <g font-family="system-ui, sans-serif" font-size="13" text-anchor="middle">
+          <rect x="12" y="42" width="120" height="46" rx="8" fill="#0d6b62" opacity=".14" stroke="#0d6b62" stroke-width="1.5"/>
+          <text x="72" y="70" fill="#06322e" font-weight="600">Lesão</text>
+          <line x1="140" y1="65" x2="176" y2="65" stroke="#0d6b62" stroke-width="2" marker-end="url(#ar)"/>
+          <rect x="184" y="42" width="120" height="46" rx="8" fill="#0d6b62" opacity=".14" stroke="#0d6b62" stroke-width="1.5"/>
+          <text x="244" y="70" fill="#06322e" font-weight="600">Defeito</text>
+          <line x1="312" y1="65" x2="348" y2="65" stroke="#0d6b62" stroke-width="2" marker-end="url(#ar)"/>
+          <rect x="356" y="34" width="96" height="62" rx="8" fill="#f6ecdf" stroke="#a8492f" stroke-width="2" stroke-dasharray="6 4"/>
+          <text x="404" y="76" fill="#a8492f" font-size="34" font-family="Georgia, serif" font-weight="700">?</text>
+          <line x1="460" y1="65" x2="496" y2="65" stroke="#0d6b62" stroke-width="2" marker-end="url(#ar)"/>
+          <rect x="504" y="42" width="112" height="46" rx="8" fill="#0d6b62" stroke="#0d6b62" stroke-width="1.5"/>
+          <text x="560" y="70" fill="#ffffff" font-weight="600">Reconstrução</text>
+        </g>
+      </svg>
+      <div class="fig-cap">O buraco não está na técnica. Está na decisão.</div>
+    </div>
+
+    <p>Não é falta de habilidade manual — quem sutura bem tem a mão pronta. O que falta é um <strong>método de decisão</strong>: olhar o defeito e saber qual fechamento serve àquela região, àquela pele e àquele paciente.</p>
+    <div class="pull">O erro que quase todo mundo comete: planejar a exérese <em>antes</em> de pensar no fechamento.</div>
+    <p>Nas próximas páginas estão os sete princípios que transformam essa decisão em protocolo.</p>
+  </div>
+  <div class="page-num"><span class="mk"><span class="logo"><svg viewBox="0 0 44 44"><path d="M33 9.5 A15.5 15.5 0 1 0 33 34.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="1 6.4"/><line x1="30.5" y1="6" x2="37.5" y2="11" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><circle cx="38" cy="11.5" r="2" fill="currentColor"/></svg></span> SurgClub</span><span>02</span></div>
+</section>
+
+<!-- ============ 3. PRINCÍPIO 1 ============ -->
+<section class="page">
+  <span class="ptag"><span class="n">1</span> Princípio</span>
+  <h2>Pensar no fechamento antes da primeira incisão</h2>
+  <p class="lead">A reconstrução não começa no retalho. Começa no desenho da exérese.</p>
+  <div class="body">
+    <p>A orientação da incisão, a forma da margem e o eixo do defeito determinam quais opções de fechamento vão existir depois. Quando você excisa sem esse plano, <strong>reduz suas próprias alternativas</strong> — e é aí que a reconstrução vira improviso.</p>
+
+    <div class="fig">
+      <svg viewBox="0 0 620 150" aria-hidden="true">
+        <g font-family="system-ui, sans-serif" font-size="12" text-anchor="middle">
+          <!-- sem plano -->
+          <rect x="10" y="14" width="290" height="120" rx="10" fill="#fbfaf6" stroke="#d9d3c7"/>
+          <text x="155" y="36" fill="#a8492f" font-weight="700" letter-spacing="1">SEM PLANO</text>
+          <circle cx="155" cy="80" r="26" fill="none" stroke="#a8492f" stroke-width="2.5"/>
+          <line x1="129" y1="80" x2="181" y2="80" stroke="#a8492f" stroke-width="2" stroke-dasharray="4 3"/>
+          <text x="155" y="122" fill="#5f6f6a">defeito redondo, tensão em todos os eixos</text>
+          <!-- com plano -->
+          <rect x="320" y="14" width="290" height="120" rx="10" fill="#fbfaf6" stroke="#0d6b62"/>
+          <text x="465" y="36" fill="#0d6b62" font-weight="700" letter-spacing="1">COM PLANO</text>
+          <path d="M425 80 L465 60 L505 80 L465 100 Z" fill="none" stroke="#0d6b62" stroke-width="2.5"/>
+          <line x1="425" y1="80" x2="505" y2="80" stroke="#0d6b62" stroke-width="2" stroke-dasharray="4 3"/>
+          <text x="465" y="122" fill="#5f6f6a">defeito fusiforme, eixo definido</text>
+        </g>
+      </svg>
+      <div class="fig-cap">Fig. 1 — O mesmo tumor, duas exéreses. Só uma deixa o fechamento fácil.</div>
+    </div>
+
+    <p>Antes de encostar a lâmina, responda: <strong>se eu retirar assim, como eu fecho?</strong> Se a resposta não vier rápido, o desenho da exérese ainda não está pronto.</p>
+    <div class="photo-slot">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 8a2 2 0 0 1 2-2h2l1.5-2h7L19 6h2a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><circle cx="12" cy="13" r="4"/></svg>
+      <b>Caso clínico ilustrando o princípio</b>
+      <small>Marcação pré-operatória + resultado.</small>
+    </div>
+  </div>
+  <div class="page-num"><span class="mk"><span class="logo"><svg viewBox="0 0 44 44"><path d="M33 9.5 A15.5 15.5 0 1 0 33 34.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="1 6.4"/><line x1="30.5" y1="6" x2="37.5" y2="11" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><circle cx="38" cy="11.5" r="2" fill="currentColor"/></svg></span> SurgClub</span><span>03</span></div>
+</section>
+
+<!-- ============ 4. PRINCÍPIO 2 — ESCADA ============ -->
+<section class="page">
+  <span class="ptag"><span class="n">2</span> Princípio</span>
+  <h2>A escada reconstrutiva</h2>
+  <p class="lead">Suba um degrau só quando o resultado exigir — nem antes, nem depois.</p>
+  <div class="body">
+    <div class="fig">
+      <svg viewBox="0 0 620 340" aria-hidden="true">
+        <line x1="14" y1="286" x2="606" y2="286" stroke="#d9d3c7" stroke-width="1.5"/>
         <g font-family="system-ui, sans-serif">
-          <rect x="30"  y="140" width="66" height="40"  rx="4" fill="#0d6b62" opacity=".30"/>
-          <rect x="120" y="112" width="66" height="68"  rx="4" fill="#0d6b62" opacity=".45"/>
-          <rect x="210" y="84"  width="66" height="96"  rx="4" fill="#0d6b62" opacity=".62"/>
-          <rect x="300" y="56"  width="66" height="124" rx="4" fill="#0d6b62" opacity=".80"/>
-          <rect x="390" y="28"  width="66" height="152" rx="4" fill="#0d6b62"/>
-          <!-- numbers -->
-          <g fill="#06322e" font-size="13" font-weight="700" text-anchor="middle">
-            <text x="63"  y="134">1</text>
-            <text x="153" y="106">2</text>
-            <text x="243" y="78">3</text>
+          <!-- bars -->
+          <rect x="20"  y="250" width="80" height="36"  rx="4" fill="#0d6b62" opacity=".26"/>
+          <rect x="116" y="222" width="80" height="64"  rx="4" fill="#0d6b62" opacity=".40"/>
+          <rect x="212" y="194" width="80" height="92"  rx="4" fill="#0d6b62" opacity=".54"/>
+          <rect x="308" y="166" width="80" height="120" rx="4" fill="#0d6b62" opacity=".68"/>
+          <rect x="404" y="138" width="80" height="148" rx="4" fill="#0d6b62" opacity=".84"/>
+          <rect x="500" y="110" width="80" height="176" rx="4" fill="#0d6b62"/>
+          <!-- glyphs above bars -->
+          <g stroke="#0d6b62" stroke-width="2" fill="none">
+            <circle cx="60" cy="228" r="11" stroke-dasharray="3 3"/>
+            <g><line x1="140" y1="200" x2="172" y2="200"/><line x1="148" y1="194" x2="148" y2="206"/><line x1="156" y1="194" x2="156" y2="206"/><line x1="164" y1="194" x2="164" y2="206"/></g>
+            <g><rect x="240" y="160" width="24" height="24" rx="3"/><circle cx="246" cy="167" r="1.4" fill="#0d6b62" stroke="none"/><circle cx="256" cy="171" r="1.4" fill="#0d6b62" stroke="none"/><circle cx="250" cy="177" r="1.4" fill="#0d6b62" stroke="none"/></g>
+            <g><path d="M336 144 L360 136 L368 154 L344 162 Z"/><path d="M338 132 L356 126" stroke-linecap="round"/><path d="M352 124 L357 126 L353 130" fill="none"/></g>
+            <g><path d="M428 116 L458 104 L470 128 L440 140 Z"/><path d="M424 100 L456 90" stroke-linecap="round"/><path d="M450 87 L457 90 L451 95" fill="none"/></g>
+            <g><rect x="528" y="80" width="24" height="20" rx="3"/><path d="M524 76 L516 68 M556 76 L564 68" stroke-linecap="round"/></g>
           </g>
-          <g fill="#ffffff" font-size="13" font-weight="700" text-anchor="middle">
-            <text x="333" y="50">4</text>
-            <text x="423" y="22">5</text>
+          <!-- numbers -->
+          <g font-size="12" font-weight="700" text-anchor="middle" fill="#ffffff">
+            <text x="60"  y="273">1</text><text x="156" y="273">2</text><text x="252" y="273">3</text>
+            <text x="348" y="273">4</text><text x="444" y="273">5</text><text x="540" y="273">6</text>
           </g>
           <!-- labels -->
-          <g fill="#5f6f6a" font-size="11" text-anchor="middle">
-            <text x="63"  y="196">2ª intenção</text>
-            <text x="153" y="196">Primário</text>
-            <text x="243" y="196">Enxerto</text>
-            <text x="333" y="196">Retalho local</text>
-            <text x="423" y="196">Complexo</text>
+          <g font-size="10.5" text-anchor="middle" fill="#5f6f6a">
+            <text x="60"  y="302">2ª intenção</text>
+            <text x="156" y="302">Fechamento</text><text x="156" y="314">primário</text>
+            <text x="252" y="302">Enxerto</text>
+            <text x="348" y="302">Retalho</text><text x="348" y="314">local</text>
+            <text x="444" y="302">Retalho</text><text x="444" y="314">regional</text>
+            <text x="540" y="302">Retalho</text><text x="540" y="314">livre</text>
           </g>
         </g>
-        <!-- axis arrow -->
         <g stroke="#b98a3c" stroke-width="1.5" fill="none">
-          <line x1="30" y1="16" x2="30" y2="180"/>
-          <path d="M26 22 L30 14 L34 22"/>
+          <line x1="20" y1="96" x2="20" y2="286"/><path d="M16 102 L20 94 L24 102"/>
         </g>
-        <text x="14" y="100" fill="#b98a3c" font-family="system-ui" font-size="11" font-weight="700" transform="rotate(-90 14 100)" text-anchor="middle">COMPLEXIDADE</text>
       </svg>
-      <div class="fig-cap">Fig. 1 — A escolha sobe na escada só quando o resultado exige.</div>
+      <div class="fig-cap">Fig. 2 — Complexidade crescente. A opção certa é a mais simples que entrega o melhor resultado.</div>
     </div>
+    <p>A escada não é uma obrigação de começar por baixo. É um mapa: <strong>subir sem necessidade adiciona risco; ficar baixo demais compromete o resultado</strong>. Dominar a escada é saber exatamente onde parar.</p>
+  </div>
+  <div class="page-num"><span class="mk"><span class="logo"><svg viewBox="0 0 44 44"><path d="M33 9.5 A15.5 15.5 0 1 0 33 34.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="1 6.4"/><line x1="30.5" y1="6" x2="37.5" y2="11" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><circle cx="38" cy="11.5" r="2" fill="currentColor"/></svg></span> SurgClub</span><span>04</span></div>
+</section>
 
-    <div class="body">
-      <ul class="ladder">
-        <li><span class="step">01</span><span class="t"><b>Segunda intenção</b> — <span>deixar cicatrizar sozinho, em áreas côncavas selecionadas.</span></span></li>
-        <li><span class="step">02</span><span class="t"><b>Fechamento primário</b> — <span>aproximar bordas respeitando as linhas de tensão.</span></span></li>
-        <li><span class="step">03</span><span class="t"><b>Enxertos de pele</b> — <span>quando falta tecido para aproximar.</span></span></li>
-        <li><span class="step">04</span><span class="t"><b>Retalhos locais</b> — <span>avanço, rotação, transposição — redistribuindo a tensão.</span></span></li>
-        <li><span class="step">05</span><span class="t"><b>Retalhos regionais e complexos</b> — <span>defeitos maiores ou subunidades nobres.</span></span></li>
-      </ul>
-    </div>
-    <div class="page-num"><span class="mk"><span class="logo"><svg viewBox="0 0 44 44"><path d="M33 9.5 A15.5 15.5 0 1 0 33 34.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="1 6.4"/><line x1="30.5" y1="6" x2="37.5" y2="11" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><circle cx="38" cy="11.5" r="2" fill="currentColor"/></svg></span> SurgClub</span><span>02</span></div>
-  </section>
-
-  <!-- ===================== PAGE 3 ===================== -->
-  <section class="page">
-    <span class="chapter-tag"><span class="n">3</span> O que dá errado</span>
-    <h2>Os 5 erros que comprometem o resultado</h2>
-
-    <div class="compare-fig">
-      <div class="cbox good">
-        <svg viewBox="0 0 160 96" aria-hidden="true">
+<!-- ============ 5. PRINCÍPIO 3 — LINHAS DE TENSÃO ============ -->
+<section class="page">
+  <span class="ptag"><span class="n">3</span> Princípio</span>
+  <h2>Trabalhe a favor das linhas de tensão</h2>
+  <p class="lead">Metade do resultado estético é decidido pela orientação da incisão.</p>
+  <div class="body">
+    <div class="fig">
+      <svg viewBox="0 0 620 330" aria-hidden="true">
+        <g font-family="system-ui, sans-serif" font-size="12" text-anchor="middle">
+          <!-- correta -->
+          <rect x="10" y="10" width="290" height="140" rx="10" fill="#fbfaf6" stroke="#0d6b62"/>
           <g stroke="#9db8b2" stroke-width="1.4" fill="none">
-            <path d="M10 24 C 50 16, 110 16, 150 24"/>
-            <path d="M10 40 C 50 32, 110 32, 150 40"/>
-            <path d="M10 56 C 50 48, 110 48, 150 56"/>
-            <path d="M10 72 C 50 64, 110 64, 150 72"/>
+            <path d="M34 46 C 100 36, 210 36, 276 46"/><path d="M34 70 C 100 60, 210 60, 276 70"/>
+            <path d="M34 94 C 100 84, 210 84, 276 94"/><path d="M34 118 C 100 108, 210 108, 276 118"/>
           </g>
-          <path d="M40 47.5 C 70 41, 100 41, 122 45.5" stroke="#0d6b62" stroke-width="3" fill="none" stroke-linecap="round"/>
-        </svg>
-        <div class="cap">Incisão a favor das linhas ✓</div>
-      </div>
-      <div class="cbox bad">
-        <svg viewBox="0 0 160 96" aria-hidden="true">
+          <path d="M90 78.5 C 130 71, 180 71, 220 76" stroke="#0d6b62" stroke-width="4" fill="none" stroke-linecap="round"/>
+          <text x="155" y="30" fill="#0d6b62" font-weight="700" letter-spacing="1">INCISÃO A FAVOR</text>
+          <!-- errada -->
+          <rect x="320" y="10" width="290" height="140" rx="10" fill="#fbfaf6" stroke="#a8492f"/>
           <g stroke="#9db8b2" stroke-width="1.4" fill="none">
-            <path d="M10 24 C 50 16, 110 16, 150 24"/>
-            <path d="M10 40 C 50 32, 110 32, 150 40"/>
-            <path d="M10 56 C 50 48, 110 48, 150 56"/>
-            <path d="M10 72 C 50 64, 110 64, 150 72"/>
+            <path d="M344 46 C 410 36, 520 36, 586 46"/><path d="M344 70 C 410 60, 520 60, 586 70"/>
+            <path d="M344 94 C 410 84, 520 84, 586 94"/><path d="M344 118 C 410 108, 520 108, 586 118"/>
           </g>
-          <line x1="80" y1="16" x2="80" y2="80" stroke="#a8492f" stroke-width="3" stroke-linecap="round"/>
-        </svg>
-        <div class="cap">Incisão contra as linhas ✕</div>
+          <line x1="465" y1="38" x2="465" y2="126" stroke="#a8492f" stroke-width="4" stroke-linecap="round"/>
+          <text x="465" y="30" fill="#a8492f" font-weight="700" letter-spacing="1">INCISÃO CONTRA</text>
+          <!-- resultados -->
+          <rect x="10" y="166" width="290" height="140" rx="10" fill="#fbfaf6" stroke="#d9d3c7"/>
+          <text x="155" y="192" fill="#0d6b62" font-weight="700" letter-spacing="1">RESULTADO</text>
+          <line x1="70" y1="240" x2="240" y2="240" stroke="#0d6b62" stroke-width="2" stroke-linecap="round"/>
+          <text x="155" y="278" fill="#5f6f6a">cicatriz fina, alinhada, discreta</text>
+          <rect x="320" y="166" width="290" height="140" rx="10" fill="#fbfaf6" stroke="#d9d3c7"/>
+          <text x="465" y="192" fill="#a8492f" font-weight="700" letter-spacing="1">RESULTADO</text>
+          <path d="M380 240 C 420 230, 440 250, 470 240 C 500 231, 520 249, 550 240" stroke="#a8492f" stroke-width="7" fill="none" stroke-linecap="round" opacity=".55"/>
+          <text x="465" y="278" fill="#5f6f6a">cicatriz alargada e visível</text>
+        </g>
+      </svg>
+      <div class="fig-cap">Fig. 3 — A mesma lesão, dois eixos de incisão, dois resultados.</div>
+    </div>
+    <p>As linhas de força da pele (RSTL) indicam para onde a tensão já trabalha naturalmente. Incisar a favor delas devolve uma cicatriz fina; incisar contra gera alargamento — e nenhuma técnica de sutura corrige um eixo mal escolhido.</p>
+  </div>
+  <div class="page-num"><span class="mk"><span class="logo"><svg viewBox="0 0 44 44"><path d="M33 9.5 A15.5 15.5 0 1 0 33 34.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="1 6.4"/><line x1="30.5" y1="6" x2="37.5" y2="11" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><circle cx="38" cy="11.5" r="2" fill="currentColor"/></svg></span> SurgClub</span><span>05</span></div>
+</section>
+
+<!-- ============ 6. PRINCÍPIO 4 — OBJETIVO ============ -->
+<section class="page">
+  <span class="ptag"><span class="n">4</span> Princípio</span>
+  <h2>Nunca escolha um retalho. Escolha um objetivo.</h2>
+  <p class="lead">A técnica é consequência. A pergunta certa vem antes dela.</p>
+  <div class="body">
+    <p>Quando você começa perguntando "qual retalho eu faço?", a resposta tende a ser o retalho que você mais domina — não o que o defeito pede. Inverta a ordem: defina primeiro <strong>o que precisa ser resolvido</strong>.</p>
+    <div class="obj-grid">
+      <div class="obj">
+        <svg class="ic" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="4" y1="16" x2="12" y2="16" stroke-linecap="round"/><path d="M9 12 L13 16 L9 20"/><line x1="28" y1="16" x2="20" y2="16" stroke-linecap="round"/><path d="M23 12 L19 16 L23 20"/></svg>
+        <div><b>Diminuir tensão</b><span>redistribuir força para longe da borda</span></div>
+      </div>
+      <div class="obj">
+        <svg class="ic" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="12" width="12" height="12" rx="2"/><path d="M19 12 L27 12 L27 20" stroke-linecap="round"/><path d="M18 20 C 22 20, 26 17, 27 13"/></svg>
+        <div><b>Mover tecido</b><span>trazer pele de onde ela sobra</span></div>
+      </div>
+      <div class="obj">
+        <svg class="ic" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 5 C 24 8, 27 14, 26 21 C 24 26, 19 28, 16 28 C 13 28, 8 26, 6 21 C 5 14, 8 8, 16 5 Z" stroke-dasharray="4 3"/><circle cx="16" cy="17" r="4"/></svg>
+        <div><b>Preservar subunidade</b><span>não cruzar limites estéticos</span></div>
+      </div>
+      <div class="obj">
+        <svg class="ic" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20 C 12 10, 20 10, 28 20" /><line x1="11" y1="16" x2="21" y2="16" stroke-width="3" stroke-linecap="round"/></svg>
+        <div><b>Esconder a cicatriz</b><span>alojar em sulco, borda ou ruga</span></div>
       </div>
     </div>
+    <div class="pull">Definido o objetivo, o número de retalhos possíveis cai de dezenas para dois ou três. A decisão deixa de ser memória e passa a ser lógica.</div>
+  </div>
+  <div class="page-num"><span class="mk"><span class="logo"><svg viewBox="0 0 44 44"><path d="M33 9.5 A15.5 15.5 0 1 0 33 34.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="1 6.4"/><line x1="30.5" y1="6" x2="37.5" y2="11" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><circle cx="38" cy="11.5" r="2" fill="currentColor"/></svg></span> SurgClub</span><span>06</span></div>
+</section>
 
-    <div class="body">
-      <div class="mistake"><span class="mn">01</span><div><h3>Pensar no fechamento só depois de excisar</h3><p>A reconstrução começa antes do bisturi. Planeje a exérese já enxergando como vai fechar — a orientação da incisão muda tudo.</p></div></div>
-      <div class="mistake"><span class="mn">02</span><div><h3>Ignorar as linhas de tensão da pele</h3><p>Incisar contra as linhas de força (RSTL) gera cicatriz alargada e visível. Trabalhar a favor delas é metade do resultado.</p></div></div>
-      <div class="mistake"><span class="mn">03</span><div><h3>Fechar sob tensão excessiva</h3><p>Tensão é a causa raiz de deiscência, necrose de borda e cicatriz feia. Quando a borda "puxa", o problema é de planejamento, não de sutura.</p></div></div>
-      <div class="mistake"><span class="mn">04</span><div><h3>Escolher o retalho pela familiaridade</h3><p>Usar sempre a mesma técnica ignora a subunidade estética da região. O retalho certo respeita o defeito — não o seu costume.</p></div></div>
-      <div class="mistake"><span class="mn">05</span><div><h3>Subestimar vascularização e pós-operatório</h3><p>Um retalho bem desenhado ainda falha se a irrigação e o cuidado pós forem negligenciados. O resultado se decide também depois da mesa.</p></div></div>
+<!-- ============ 7. PRINCÍPIO 5 — ERROS ============ -->
+<section class="page">
+  <span class="ptag"><span class="n">5</span> Princípio</span>
+  <h2>Conheça os cinco erros mais comuns</h2>
+  <p class="lead">Quase toda reconstrução ruim cai em um destes cinco.</p>
+  <div class="body">
+    <div class="err">
+      <svg class="ic" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 28 L24 12 L30 10 L28 16 L12 32 Z"/><line x1="8" y1="28" x2="12" y2="32"/></svg>
+      <div><h3>1. Excisar antes de planejar o fechamento</h3><p>A margem define as opções que sobram. Desenhe a saída antes da entrada.</p></div>
     </div>
-    <div class="page-num"><span class="mk"><span class="logo"><svg viewBox="0 0 44 44"><path d="M33 9.5 A15.5 15.5 0 1 0 33 34.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="1 6.4"/><line x1="30.5" y1="6" x2="37.5" y2="11" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><circle cx="38" cy="11.5" r="2" fill="currentColor"/></svg></span> SurgClub</span><span>03</span></div>
-  </section>
+    <div class="err">
+      <svg class="ic" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 14 C 16 10, 26 10, 34 14"/><path d="M6 22 C 16 18, 26 18, 34 22"/><path d="M6 30 C 16 26, 26 26, 34 30"/><line x1="20" y1="6" x2="20" y2="34" stroke-width="2.6"/></svg>
+      <div><h3>2. Ignorar as linhas de tensão</h3><p>Cicatriz alargada quase sempre nasce de um eixo escolhido contra a pele.</p></div>
+    </div>
+    <div class="err">
+      <svg class="ic" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="20" y1="8" x2="20" y2="32" stroke-dasharray="3 3"/><path d="M14 14 L6 14 M9 10 L5 14 L9 18"/><path d="M26 14 L34 14 M31 10 L35 14 L31 18"/><path d="M14 26 L6 26 M9 22 L5 26 L9 30"/><path d="M26 26 L34 26 M31 22 L35 26 L31 30"/></svg>
+      <div><h3>3. Fechar sob tensão excessiva</h3><p>Causa raiz de deiscência e necrose de borda. Se a borda "puxa", o plano falhou.</p></div>
+    </div>
+    <div class="err">
+      <svg class="ic" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="14" width="12" height="12" rx="2"/><rect x="23" y="14" width="12" height="12" rx="2"/><path d="M17 20 L23 20" stroke-dasharray="2 2"/></svg>
+      <div><h3>4. Repetir sempre a mesma técnica</h3><p>O retalho certo respeita a subunidade estética — não o seu costume.</p></div>
+    </div>
+    <div class="err">
+      <svg class="ic" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6 C 26 14, 30 19, 30 24 A10 10 0 0 1 10 24 C 10 19, 14 14, 20 6 Z"/><line x1="10" y1="30" x2="30" y2="10" stroke-width="2.4"/></svg>
+      <div><h3>5. Subestimar vascularização e pós-operatório</h3><p>Retalho bem desenhado ainda falha sem irrigação e cuidado depois da mesa.</p></div>
+    </div>
+  </div>
+  <div class="page-num"><span class="mk"><span class="logo"><svg viewBox="0 0 44 44"><path d="M33 9.5 A15.5 15.5 0 1 0 33 34.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="1 6.4"/><line x1="30.5" y1="6" x2="37.5" y2="11" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><circle cx="38" cy="11.5" r="2" fill="currentColor"/></svg></span> SurgClub</span><span>07</span></div>
+</section>
 
-  <!-- ===================== PAGE 4 ===================== -->
-  <section class="page">
-    <span class="chapter-tag"><span class="n">4</span> Na prática</span>
-    <h2>Checklist antes de cada reconstrução</h2>
-    <p class="lead">Seis perguntas para responder antes da primeira incisão.</p>
-    <div class="body">
-      <ul class="check">
-        <li><span class="box"></span><span><b>Tamanho e profundidade</b> — o defeito atinge só a pele ou planos mais profundos?</span></li>
-        <li><span class="box"></span><span><b>Localização e subunidade</b> — qual região estética? Há estrutura livre (pálpebra, asa nasal, lábio) em risco?</span></li>
-        <li><span class="box"></span><span><b>Linhas de tensão</b> — para onde correm as linhas de força? Como orientar a incisão a favor delas?</span></li>
+<!-- ============ 8. PRINCÍPIO 6 — CHECKLIST ============ -->
+<section class="page">
+  <span class="ptag"><span class="n">6</span> Princípio</span>
+  <h2>Use um checklist, não a memória</h2>
+  <p class="lead">Seis perguntas antes da primeira incisão. Toda vez.</p>
+  <div class="body">
+    <div class="cl">
+      <div class="cl-h">Checklist da reconstrução</div>
+      <ul>
+        <li><span class="box"></span><span><b>Tamanho e profundidade</b> — atinge só a pele ou planos mais profundos?</span></li>
+        <li><span class="box"></span><span><b>Localização e subunidade</b> — há estrutura livre (pálpebra, asa nasal, lábio) em risco?</span></li>
+        <li><span class="box"></span><span><b>Linhas de tensão</b> — para onde correm? Como orientar a incisão a favor delas?</span></li>
         <li><span class="box"></span><span><b>Reserva e vascularização</b> — há pele adjacente para mobilizar com segurança?</span></li>
-        <li><span class="box"></span><span><b>Expectativa do paciente</b> — o que ele valoriza: cicatriz, tempo, número de tempos cirúrgicos?</span></li>
+        <li><span class="box"></span><span><b>Expectativa do paciente</b> — cicatriz, tempo ou número de tempos cirúrgicos?</span></li>
         <li><span class="box"></span><span><b>Seu domínio técnico</b> — você domina a opção ideal ou precisa de referência antes?</span></li>
       </ul>
-      <div class="pull">Se a última pergunta trava você, o problema não é o caso — é acesso a repetição e referência. É exatamente isso que resolvemos a seguir.</div>
-
-      <div class="photo-slot">
-        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 8a2 2 0 0 1 2-2h2l1.5-2h7L19 6h2a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><circle cx="12" cy="13" r="4"/></svg>
-        <b>Espaço para o seu caso real</b>
-        <small>Insira aqui uma foto pré e pós de um caso seu, ilustrando a decisão de fechamento.</small>
-      </div>
     </div>
-    <div class="page-num"><span class="mk"><span class="logo"><svg viewBox="0 0 44 44"><path d="M33 9.5 A15.5 15.5 0 1 0 33 34.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="1 6.4"/><line x1="30.5" y1="6" x2="37.5" y2="11" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><circle cx="38" cy="11.5" r="2" fill="currentColor"/></svg></span> SurgClub</span><span>04</span></div>
-  </section>
+    <p>Checklist não é burocracia — é o que impede que a pressa da sala apague uma variável importante. Cirurgião experiente não confia na memória: confia no processo.</p>
+  </div>
+  <div class="page-num"><span class="mk"><span class="logo"><svg viewBox="0 0 44 44"><path d="M33 9.5 A15.5 15.5 0 1 0 33 34.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="1 6.4"/><line x1="30.5" y1="6" x2="37.5" y2="11" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><circle cx="38" cy="11.5" r="2" fill="currentColor"/></svg></span> SurgClub</span><span>08</span></div>
+</section>
 
-  <!-- ===================== PAGE 5 ===================== -->
-  <section class="page">
-    <span class="chapter-tag"><span class="n">5</span> O próximo passo</span>
-    <h2>De "eu não faço isso" para "eu resolvo"</h2>
-    <p class="lead">Segurança em reconstrução não nasce de um curso solto. Nasce de repetição, referência e comunidade.</p>
-    <div class="body">
-      <p>Ninguém domina retalho vendo um vídeo isolado no fim de semana. O que constrói segurança é ver <strong>muitos casos, passo a passo</strong>, poder rever quando o caso real aparece no consultório, e ter para quem perguntar quando bate a dúvida.</p>
-      <p>É por isso que o SurgClub reuniu tudo num só lugar — uma biblioteca contínua de cirurgia cutânea e reconstrução, com passo a passo, sessões clínicas comentadas e lives com mentores. Você para de juntar pedaços e passa a evoluir de forma contínua.</p>
-      <div class="pull">A audiência técnica você já tem. O que faltava era um sistema para nunca mais travar no fechamento.</div>
+<!-- ============ 9. PRINCÍPIO 7 — ALGORITMO ============ -->
+<section class="page">
+  <span class="ptag"><span class="n">7</span> Princípio</span>
+  <h2>O algoritmo da decisão</h2>
+  <p class="lead">Se você seguir só uma página deste guia, que seja esta.</p>
+  <div class="fig">
+    <svg viewBox="0 0 620 600" aria-hidden="true">
+      <defs><marker id="a2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#0d6b62"/></marker></defs>
+      <g font-family="system-ui, sans-serif" text-anchor="middle" stroke-linejoin="round">
+        <!-- start -->
+        <rect x="228" y="8" width="140" height="42" rx="21" fill="#06322e"/>
+        <text x="298" y="35" fill="#fff" font-size="14" font-weight="700">DEFEITO</text>
+        <line x1="298" y1="50" x2="298" y2="76" stroke="#0d6b62" stroke-width="2" marker-end="url(#a2)"/>
 
-      <div class="photo-slot">
-        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 8a2 2 0 0 1 2-2h2l1.5-2h7L19 6h2a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><circle cx="12" cy="13" r="4"/></svg>
-        <b>Foto do mentor / bastidor de uma live</b>
-        <small>Uma imagem sua ou da comunidade aqui reforça a autoridade e a prova social.</small>
-      </div>
+        <!-- D1 -->
+        <path d="M298 82 L440 128 L298 174 L156 128 Z" fill="#fbfaf6" stroke="#0d6b62" stroke-width="2"/>
+        <text x="298" y="123" font-size="12.5" fill="#06322e" font-weight="600">Fecha primariamente</text>
+        <text x="298" y="139" font-size="12.5" fill="#06322e" font-weight="600">sem tensão?</text>
+        <line x1="440" y1="128" x2="486" y2="128" stroke="#0d6b62" stroke-width="2" marker-end="url(#a2)"/>
+        <text x="462" y="119" font-size="11" fill="#0d6b62" font-weight="700">SIM</text>
+        <rect x="492" y="106" width="120" height="44" rx="8" fill="#0d6b62"/>
+        <text x="552" y="126" fill="#fff" font-size="12">Fechamento</text><text x="552" y="141" fill="#fff" font-size="12">primário</text>
+        <line x1="298" y1="174" x2="298" y2="206" stroke="#0d6b62" stroke-width="2" marker-end="url(#a2)"/>
+        <text x="282" y="196" font-size="11" fill="#a8492f" font-weight="700">NÃO</text>
+
+        <!-- D2 -->
+        <path d="M298 212 L440 258 L298 304 L156 258 Z" fill="#fbfaf6" stroke="#0d6b62" stroke-width="2"/>
+        <text x="298" y="253" font-size="12.5" fill="#06322e" font-weight="600">Há tecido vizinho</text>
+        <text x="298" y="269" font-size="12.5" fill="#06322e" font-weight="600">disponível?</text>
+        <line x1="440" y1="258" x2="486" y2="258" stroke="#0d6b62" stroke-width="2" marker-end="url(#a2)"/>
+        <text x="462" y="249" font-size="11" fill="#0d6b62" font-weight="700">SIM</text>
+        <rect x="492" y="236" width="120" height="44" rx="8" fill="#0d6b62"/>
+        <text x="552" y="256" fill="#fff" font-size="12">Retalho local</text><text x="552" y="271" fill="#fff" font-size="12">ou regional</text>
+        <line x1="298" y1="304" x2="298" y2="336" stroke="#0d6b62" stroke-width="2" marker-end="url(#a2)"/>
+        <text x="282" y="326" font-size="11" fill="#a8492f" font-weight="700">NÃO</text>
+
+        <!-- D3 -->
+        <path d="M298 342 L448 392 L298 442 L148 392 Z" fill="#fbfaf6" stroke="#0d6b62" stroke-width="2"/>
+        <text x="298" y="381" font-size="12.5" fill="#06322e" font-weight="600">Área de pressão ou</text>
+        <text x="298" y="397" font-size="12.5" fill="#06322e" font-weight="600">exposição óssea?</text>
+        <line x1="148" y1="392" x2="112" y2="392" stroke="#0d6b62" stroke-width="2" marker-end="url(#a2)"/>
+        <text x="130" y="383" font-size="11" fill="#a8492f" font-weight="700">NÃO</text>
+        <rect x="4" y="370" width="104" height="44" rx="8" fill="#0d6b62"/>
+        <text x="56" y="397" fill="#fff" font-size="12.5">Enxerto</text>
+        <line x1="298" y1="442" x2="298" y2="482" stroke="#0d6b62" stroke-width="2" marker-end="url(#a2)"/>
+        <text x="316" y="468" font-size="11" fill="#0d6b62" font-weight="700">SIM</text>
+
+        <!-- end -->
+        <rect x="168" y="488" width="260" height="56" rx="10" fill="#06322e"/>
+        <text x="298" y="512" fill="#fff" font-size="12.5">Retalhos microcirúrgicos</text>
+        <text x="298" y="529" fill="#fff" font-size="12.5">ou interpolados</text>
+      </g>
+    </svg>
+    <div class="fig-cap">Fig. 4 — O algoritmo transforma dúvida em sequência. Sempre a mesma ordem de perguntas.</div>
+  </div>
+  <div class="page-num"><span class="mk"><span class="logo"><svg viewBox="0 0 44 44"><path d="M33 9.5 A15.5 15.5 0 1 0 33 34.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="1 6.4"/><line x1="30.5" y1="6" x2="37.5" y2="11" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><circle cx="38" cy="11.5" r="2" fill="currentColor"/></svg></span> SurgClub</span><span>09</span></div>
+</section>
+
+<!-- ============ 10. CASO CLÍNICO ============ -->
+<section class="page">
+  <span class="ptag">Aplicação</span>
+  <h2>Caso clínico, do defeito ao 30º dia</h2>
+  <p class="lead">Os sete princípios aplicados em um único caso, passo a passo.</p>
+  <div class="body">
+    <div class="slot-grid">
+      <div class="photo-slot"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 8a2 2 0 0 1 2-2h2l1.5-2h7L19 6h2a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><circle cx="12" cy="13" r="4"/></svg><b>1. Pré-operatório</b><small>lesão antes da exérese</small></div>
+      <div class="photo-slot"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 8a2 2 0 0 1 2-2h2l1.5-2h7L19 6h2a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><circle cx="12" cy="13" r="4"/></svg><b>2. Defeito</b><small>após a ressecção</small></div>
+      <div class="photo-slot"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 8a2 2 0 0 1 2-2h2l1.5-2h7L19 6h2a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><circle cx="12" cy="13" r="4"/></svg><b>3. Marcação</b><small>desenho do retalho</small></div>
+      <div class="photo-slot"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 8a2 2 0 0 1 2-2h2l1.5-2h7L19 6h2a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><circle cx="12" cy="13" r="4"/></svg><b>4. Resultado imediato</b><small>fim do procedimento</small></div>
     </div>
-    <div class="note">Conteúdo educativo. As decisões cirúrgicas devem sempre considerar o caso individual e o julgamento do profissional responsável.</div>
-    <div class="page-num"><span class="mk"><span class="logo"><svg viewBox="0 0 44 44"><path d="M33 9.5 A15.5 15.5 0 1 0 33 34.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="1 6.4"/><line x1="30.5" y1="6" x2="37.5" y2="11" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><circle cx="38" cy="11.5" r="2" fill="currentColor"/></svg></span> SurgClub</span><span>05</span></div>
-  </section>
+    <div class="photo-slot"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 8a2 2 0 0 1 2-2h2l1.5-2h7L19 6h2a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><circle cx="12" cy="13" r="4"/></svg><b>5. Trinta dias</b><small>cicatriz madura — a prova do método</small></div>
+    <p style="margin-top:16px">Comente em cada etapa qual princípio guiou a decisão: por que aquele eixo, por que aquele degrau da escada, qual era o objetivo antes de escolher o retalho.</p>
+  </div>
+  <div class="page-num"><span class="mk"><span class="logo"><svg viewBox="0 0 44 44"><path d="M33 9.5 A15.5 15.5 0 1 0 33 34.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="1 6.4"/><line x1="30.5" y1="6" x2="37.5" y2="11" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><circle cx="38" cy="11.5" r="2" fill="currentColor"/></svg></span> SurgClub</span><span>10</span></div>
+</section>
 
-  <!-- ===================== CTA ===================== -->
-  <section class="page cta-page">
-    <span class="logo" aria-hidden="true"><svg viewBox="0 0 44 44"><path d="M33 9.5 A15.5 15.5 0 1 0 33 34.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-dasharray="1 6.4"/><line x1="30.5" y1="6" x2="37.5" y2="11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="38" cy="11.5" r="1.7" fill="currentColor"/></svg></span>
-    <span class="eyebrow">SurgClub</span>
-    <h2>Sua biblioteca contínua de reconstrução</h2>
-    <p>Domine o fechamento com passo a passo, sessões clínicas e mentoria — junto de uma comunidade de médicos.</p>
-    <ul class="cta-list">
-      <li><span class="dot"></span> Biblioteca de cirurgia cutânea e reconstrução</li>
-      <li><span class="dot"></span> Passo a passo em vídeo, sempre disponível</li>
-      <li><span class="dot"></span> Sessões clínicas comentadas e lives com mentores</li>
-      <li><span class="dot"></span> Grupo exclusivo para trocar casos e dúvidas</li>
-    </ul>
-    <a class="cta-btn" href="#">Conhecer o SurgClub →</a>
-    <div class="foot">SurgClub</div>
-  </section>
+<!-- ============ 11. ANTES / DEPOIS + REFERÊNCIAS ============ -->
+<section class="page">
+  <span class="ptag">Mudança</span>
+  <h2>O que muda quando você aprende a decidir</h2>
+  <div class="ba">
+    <div class="before">
+      <h4>Antes</h4>
+      <ul>
+        <li>Decide na hora, na sala</li>
+        <li>Escolhe o retalho que domina</li>
+        <li>Recusa ou encaminha o caso</li>
+        <li>Resultado varia a cada paciente</li>
+        <li>Insegurança em área nobre</li>
+      </ul>
+    </div>
+    <div class="after">
+      <h4>Depois</h4>
+      <ul>
+        <li>Decide antes da incisão</li>
+        <li>Escolhe pelo objetivo do defeito</li>
+        <li>Resolve o caso na própria agenda</li>
+        <li>Resultado previsível e repetível</li>
+        <li>Segurança para subir a escada</li>
+      </ul>
+    </div>
+  </div>
+  <div class="body">
+    <p>Os livros ensinam <strong>técnicas</strong>; a prática exige <strong>decisões</strong>. O intervalo entre as duas coisas é onde o médico trava — e é exatamente ali que um método faz diferença.</p>
+    <div class="refs">
+      <h4>Para aprofundar</h4>
+      <ul>
+        <li>Tratados de cirurgia dermatológica e reconstrução cutânea</li>
+        <li>Artigos sobre linhas de tensão relaxadas (RSTL) e subunidades estéticas</li>
+        <li>Consensos e diretrizes de cirurgia micrográfica de Mohs</li>
+        <li>Atlas de retalhos locais em face</li>
+      </ul>
+    </div>
+  </div>
+  <div class="note">Substituir por referências específicas (autor, obra e ano) validadas pelo autor.</div>
+  <div class="page-num"><span class="mk"><span class="logo"><svg viewBox="0 0 44 44"><path d="M33 9.5 A15.5 15.5 0 1 0 33 34.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="1 6.4"/><line x1="30.5" y1="6" x2="37.5" y2="11" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><circle cx="38" cy="11.5" r="2" fill="currentColor"/></svg></span> SurgClub</span><span>11</span></div>
+</section>
+
+<!-- ============ 12. SURGCLUB + DEPOIMENTOS ============ -->
+<section class="page">
+  <span class="ptag">Comunidade</span>
+  <h2>Conheça o SurgClub</h2>
+  <p class="lead">Não é um curso. É onde a decisão vira repetição.</p>
+  <div class="body">
+    <div class="club-grid">
+      <div class="club"><b>Biblioteca contínua</b><span>cirurgia cutânea e reconstrução, sempre disponível</span></div>
+      <div class="club"><b>Casos reais</b><span>do defeito ao resultado, com o raciocínio explicado</span></div>
+      <div class="club"><b>Sessões clínicas</b><span>discussão de conduta caso a caso</span></div>
+      <div class="club"><b>Vídeos passo a passo</b><span>para rever antes do seu próprio caso</span></div>
+      <div class="club"><b>Lives com mentores</b><span>dúvida respondida por quem opera</span></div>
+      <div class="club"><b>Comunidade</b><span>médicos trocando casos todos os dias</span></div>
+    </div>
+    <p>Ninguém domina reconstrução vendo um vídeo solto no fim de semana. Domina quem vê muitos casos, revê quando o caso real aparece e tem a quem perguntar.</p>
+    <blockquote class="quote">Espaço para depoimento real de um membro.<cite>— Nome, especialidade</cite></blockquote>
+    <blockquote class="quote">Espaço para comentário de professor ou colega.<cite>— Nome, instituição</cite></blockquote>
+    <div class="photo-slot" style="margin-top:14px"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 8a2 2 0 0 1 2-2h2l1.5-2h7L19 6h2a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><circle cx="12" cy="13" r="4"/></svg><b>Print de comentário ou bastidor de live</b><small>prova social real vale mais que qualquer promessa</small></div>
+  </div>
+  <div class="page-num"><span class="mk"><span class="logo"><svg viewBox="0 0 44 44"><path d="M33 9.5 A15.5 15.5 0 1 0 33 34.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="1 6.4"/><line x1="30.5" y1="6" x2="37.5" y2="11" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><circle cx="38" cy="11.5" r="2" fill="currentColor"/></svg></span> SurgClub</span><span>12</span></div>
+</section>
+
+<!-- ============ 13. FECHAMENTO ============ -->
+<section class="page close-page">
+  <span class="logo"><svg viewBox="0 0 44 44"><path d="M33 9.5 A15.5 15.5 0 1 0 33 34.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-dasharray="1 6.4"/><line x1="30.5" y1="6" x2="37.5" y2="11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="38" cy="11.5" r="1.7" fill="currentColor"/></svg></span>
+  <blockquote>A reconstrução não começa quando você desenha um retalho. Ela começa quando você aprende a enxergar o defeito.</blockquote>
+  <div class="sig">Bruno Ramos<small>SurgClub</small></div>
+  <a class="cta-btn" href="#">Conhecer o SurgClub →</a>
+</section>
 
 </div>
